@@ -6,7 +6,7 @@
 
 * **Клас `Direction` для лінійного руху**:
     Логіка перевірки "лінії видимості" (для тури, слона, ферзя) ідентична: рух по клітинках до перешкоди. Замість дублювання циклів `for` у кожній фігурі, ця логіка винесена в окремий клас.
-    * *Логіка:* [Direction.cs](./CheesConsole/Direction.cs#L45) (Метод `GetPossibleMoves`)
+    * *Логіка:* (./CheesConsole/Direction.cs#L45) (Метод `GetPossibleMoves`)
     * *Використання (Слон):* [Bishop.cs](./Pieces/Bishop.cs#L43)
     * *Використання (Тура):* [Rook.cs](./Pieces/Rook.cs#L43)
 
