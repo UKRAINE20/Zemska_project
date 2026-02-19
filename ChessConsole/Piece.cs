@@ -97,7 +97,7 @@ namespace ChessConsole
         }
     }
 
-        protected IEnumerable<ChessBoard.Cell> GetDirectionalMoves(Direction[] directions)
+         protected IEnumerable<ChessBoard.Cell> GetDirectionalMoves(Direction[] directions)
         {
             foreach (Direction direction in directions)
             {
