@@ -24,19 +24,7 @@ namespace ChessConsole.Pieces
             Moved = promote.Moved;
         }
 
-        public override IEnumerable<ChessBoard.Cell> PossibleMoves
-        {
-            get
-            {
-                foreach (Direction direction in directions)
-                {
-                    foreach (ChessBoard.Cell cell in direction.GetPossibleMoves())
-                    {
-                        yield return cell;
-                    }
-                }
-            }
-        }
+        public override IEnumerable<ChessBoard.Cell> PossibleMoves => GetDirectionalMoves(directions);
 
         public override void Recalculate()
         {
