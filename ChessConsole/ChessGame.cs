@@ -144,12 +144,6 @@ namespace ChessConsole
             //Sets the cursor color -> yellow
             g.SetBackground(ConsoleColor.DarkYellow, 10 + cursorX, 5 + (7 - cursorY));
 
-            //TODO: Remove en passant testing
-            /*if (board.EnPassant != null)
-                g.SetBackground(ConsoleColor.DarkCyan, 10 + board.EnPassant.X, 5 + (7 - board.EnPassant.Y));
-
-            if (board.EnPassantCapture != null)
-                g.SetBackground(ConsoleColor.DarkMagenta, 10 + board.EnPassantCapture.X, 5 + (7 - board.EnPassantCapture.Y));*/
 
             //Lighten for checkerboard pattern
             for (int i = 0; i < 8; i++)
