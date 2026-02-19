@@ -96,4 +96,18 @@ namespace ChessConsole
             return cell != null && cell.Piece != null && cell.Piece.Color != Color;
         }
     }
+
+        protected IEnumerable<ChessBoard.Cell> GetDirectionalMoves(Direction[] directions)
+        {
+            foreach (Direction direction in directions)
+            {
+                if (direction != null) // Додаткова перевірка на безпеку
+                {
+                    foreach (ChessBoard.Cell cell in direction.GetPossibleMoves())
+                    {
+                        yield return cell;
+                    }
+                }
+            }
+        }
 }
