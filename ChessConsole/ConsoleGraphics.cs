@@ -207,132 +207,26 @@ namespace ChessConsole
         /// <param name="y">Y-coord in console buffer</param>
         public void DarkenBackground(int x, int y)
         {
-            switch (backBuffer[x, y].Background)
-            {
-                case ConsoleColor.Blue:
-                    backBuffer[x, y].Background = ConsoleColor.DarkBlue;
-                    break;
-                case ConsoleColor.Green:
-                    backBuffer[x, y].Background = ConsoleColor.DarkGreen;
-                    break;
-                case ConsoleColor.Yellow:
-                    backBuffer[x, y].Background = ConsoleColor.DarkYellow;
-                    break;
-                case ConsoleColor.Magenta:
-                    backBuffer[x, y].Background = ConsoleColor.DarkMagenta;
-                    break;
-                case ConsoleColor.Gray:
-                    backBuffer[x, y].Background = ConsoleColor.DarkGray;
-                    break;
-                case ConsoleColor.Cyan:
-                    backBuffer[x, y].Background = ConsoleColor.DarkCyan;
-                    break;
-                case ConsoleColor.Red:
-                    backBuffer[x, y].Background = ConsoleColor.DarkRed;
-                    break;
-            }
+            if (DarkenMap.TryGetValue(backBuffer[x, y].Background, out ConsoleColor darkColor))
+                backBuffer[x, y].Background = darkColor;
         }
 
-        /// <summary>
-        /// Darkens the foreground color of a colored character in the back buffer.
-        /// If foreground color is already dark or no dark version exists it leaves it unchanged.
-        /// </summary>
-        /// <param name="x">X-coord in console buffer</param>
-        /// <param name="y">Y-coord in console buffer</param>
         public void DarkenForeground(int x, int y)
         {
-            switch (backBuffer[x, y].Foreground)
-            {
-                case ConsoleColor.Blue:
-                    backBuffer[x, y].Foreground = ConsoleColor.DarkBlue;
-                    break;
-                case ConsoleColor.Green:
-                    backBuffer[x, y].Foreground = ConsoleColor.DarkGreen;
-                    break;
-                case ConsoleColor.Yellow:
-                    backBuffer[x, y].Foreground = ConsoleColor.DarkYellow;
-                    break;
-                case ConsoleColor.Magenta:
-                    backBuffer[x, y].Foreground = ConsoleColor.DarkMagenta;
-                    break;
-                case ConsoleColor.Gray:
-                    backBuffer[x, y].Foreground = ConsoleColor.DarkGray;
-                    break;
-                case ConsoleColor.Cyan:
-                    backBuffer[x, y].Foreground = ConsoleColor.DarkCyan;
-                    break;
-                case ConsoleColor.Red:
-                    backBuffer[x, y].Foreground = ConsoleColor.DarkRed;
-                    break;
-            }
+            if (DarkenMap.TryGetValue(backBuffer[x, y].Foreground, out ConsoleColor darkColor))
+                backBuffer[x, y].Foreground = darkColor;
         }
 
-        /// <summary>
-        /// Lightens the background color of a colored character in the back buffer.
-        /// If background color is already light or no light version exists it leaves it unchanged.
-        /// </summary>
-        /// <param name="x">X-coord in console buffer</param>
-        /// <param name="y">Y-coord in console buffer</param>
         public void LightenBackground(int x, int y)
         {
-            switch (backBuffer[x, y].Background)
-            {
-                case ConsoleColor.DarkBlue:
-                    backBuffer[x, y].Background = ConsoleColor.Blue;
-                    break;
-                case ConsoleColor.DarkGreen:
-                    backBuffer[x, y].Background = ConsoleColor.Green;
-                    break;
-                case ConsoleColor.DarkYellow:
-                    backBuffer[x, y].Background = ConsoleColor.Yellow;
-                    break;
-                case ConsoleColor.DarkMagenta:
-                    backBuffer[x, y].Background = ConsoleColor.Magenta;
-                    break;
-                case ConsoleColor.DarkGray:
-                    backBuffer[x, y].Background = ConsoleColor.Gray;
-                    break;
-                case ConsoleColor.DarkCyan:
-                    backBuffer[x, y].Background = ConsoleColor.Cyan;
-                    break;
-                case ConsoleColor.DarkRed:
-                    backBuffer[x, y].Background = ConsoleColor.Red;
-                    break;
-            }
+            if (LightenMap.TryGetValue(backBuffer[x, y].Background, out ConsoleColor lightColor))
+                backBuffer[x, y].Background = lightColor;
         }
 
-        /// <summary>
-        /// Lightens the foreground color of a colored character in the back buffer.
-        /// If foreground color is already light or no light version exists it leaves it unchanged.
-        /// </summary>
-        /// <param name="x">X-coord in console buffer</param>
-        /// <param name="y">Y-coord in console buffer</param>
         public void LightenForeground(int x, int y)
         {
-            switch (backBuffer[x, y].Foreground)
-            {
-                case ConsoleColor.DarkBlue:
-                    backBuffer[x, y].Foreground = ConsoleColor.Blue;
-                    break;
-                case ConsoleColor.DarkGreen:
-                    backBuffer[x, y].Foreground = ConsoleColor.Green;
-                    break;
-                case ConsoleColor.DarkYellow:
-                    backBuffer[x, y].Foreground = ConsoleColor.Yellow;
-                    break;
-                case ConsoleColor.DarkMagenta:
-                    backBuffer[x, y].Foreground = ConsoleColor.Magenta;
-                    break;
-                case ConsoleColor.DarkGray:
-                    backBuffer[x, y].Foreground = ConsoleColor.Gray;
-                    break;
-                case ConsoleColor.DarkCyan:
-                    backBuffer[x, y].Foreground = ConsoleColor.Cyan;
-                    break;
-                case ConsoleColor.DarkRed:
-                    backBuffer[x, y].Foreground = ConsoleColor.Red;
-                    break;
-            }
+            if (LightenMap.TryGetValue(backBuffer[x, y].Foreground, out ConsoleColor lightColor))
+                backBuffer[x, y].Foreground = lightColor;
         }
 
         #endregion
